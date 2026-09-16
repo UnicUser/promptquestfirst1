@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+	<rect width="64" height="64" rx="14" fill="#0f1220" />
+	<circle cx="20" cy="18" r="1.6" fill="#eef1fb" />
+	<circle cx="46" cy="14" r="1.2" fill="#8b5cf6" />
+	<circle cx="52" cy="40" r="1.4" fill="#6ea8fe" />
+	<circle cx="14" cy="46" r="1.2" fill="#eef1fb" />
+	<text x="32" y="42" font-size="30" text-anchor="middle">⚔️</text>
+</svg>

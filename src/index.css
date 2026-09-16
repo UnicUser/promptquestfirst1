@@ -1,0 +1,64 @@
+:root {
+	--bg: #0f1220;
+	--surface: #171b2e;
+	--surface-2: #1f2440;
+	--border: #2b3157;
+	--text: #eef1fb;
+	--muted: #9aa1c7;
+	--faint: #6b73a0;
+	--accent: #6ea8fe;
+	--accent-2: #8b5cf6;
+	--green: #67d6a0;
+	--orange: #f0a35e;
+	--red: #f2695c;
+	--sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--mono: "Menlo", "Consolas", ui-monospace, monospace;
+	color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; padding: 0; min-height: 100vh; }
+body {
+	background: var(--bg);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/* Twinkling starfield behind everything. */
+body::before,
+body::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+}
+body::before {
+	background-image:
+		radial-gradient(1.6px 1.6px at 24px 32px, rgba(255, 255, 255, 0.85), transparent),
+		radial-gradient(1.2px 1.2px at 92px 128px, rgba(174, 196, 255, 0.7), transparent),
+		radial-gradient(1.4px 1.4px at 152px 72px, rgba(255, 255, 255, 0.7), transparent),
+		radial-gradient(1px 1px at 120px 188px, rgba(255, 255, 255, 0.5), transparent),
+		radial-gradient(1.2px 1.2px at 196px 44px, rgba(200, 214, 255, 0.6), transparent),
+		radial-gradient(1px 1px at 56px 220px, rgba(255, 255, 255, 0.45), transparent);
+	background-repeat: repeat;
+	background-size: 240px 240px;
+	animation: pq-twinkle 5.5s ease-in-out infinite;
+}
+body::after {
+	background-image:
+		radial-gradient(1px 1px at 40px 80px, rgba(255, 255, 255, 0.5), transparent),
+		radial-gradient(1px 1px at 180px 140px, rgba(139, 92, 246, 0.5), transparent),
+		radial-gradient(1.3px 1.3px at 300px 60px, rgba(255, 255, 255, 0.6), transparent),
+		radial-gradient(1px 1px at 260px 200px, rgba(110, 168, 254, 0.5), transparent),
+		radial-gradient(1px 1px at 90px 260px, rgba(255, 255, 255, 0.4), transparent);
+	background-repeat: repeat;
+	background-size: 340px 340px;
+	animation: pq-twinkle 7s ease-in-out infinite reverse;
+}
+@keyframes pq-twinkle {
+	0%, 100% { opacity: 0.55; }
+	50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+	body::before, body::after { animation: none; }
+}
